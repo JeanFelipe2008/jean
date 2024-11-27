@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Verde</title>
+    <style>
+        /* Reset básico de margens e paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* Corpo do site */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #A8D5BA; /* Cor de fundo verde suave */
+            color: #1D4731; /* Cor do texto */
+            line-height: 1.6;
+        }
+
+        /* Container centralizado */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #1D4731;
+            font-size: 2.5rem;
+        }
+
+        /* Estilo da tabela */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table, .table th, .table td {
+            border: 1px solid #1D4731;
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #1D4731;
+        }
+
+        /* Estilo da imagem */
+        .image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border: 3px solid #1D4731;
+        }
+
+        /* Estilo do botão */
+        .btn {
+            background-color: #4CAF50; /* Cor verde */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #357a38; /* Cor de hover */
+        }
+
+        /* Seção */
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Texto */
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Emoji */
+        .emoji {
+            font-size: 100px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Página 1 -->
+    <div class="container" id="pagina1">
+        <header>
+            <h1>Tabela 3x3, Imagem, Botão e Texto</h1>
+        </header>
+
+        <!-- Tabela 3x3 com os nomes, idades e jogos -->
+        <section>
+            <h2>Tabela 3x3</h2>
+            <table class="table">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Jogo</th>
+                </tr>
+                <tr>
+                    <td>Carlos</td>
+                    <td>17</td>
+                    <td>GTA 5</td>
+                </tr>
+                <tr>
+                    <td>Jean</td>
+                    <td>16</td>
+                    <td>Fortnite</td>
+                </tr>
+                <tr>
+                    <td>Rodrigo</td>
+                    <td>15</td>
+                    <td>Call of Duty</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Imagem -->
+        <section>
+            <h2>Imagem</h2>
+            <img src="https://via.placeholder.com/300" alt="Imagem verde" class="image">
+        </section>
+
+        <!-- Botão -->
+        <section>
+            <button class="btn" onclick="mostrarPagina('pagina2')">Ir para Página 2</button>
+        </section>
+
+        <!-- Texto -->
+        <section>
+            <h2>Texto</h2>
+            <p>"Conhece-te a ti mesmo."
+
+                Esse é um dos ensinamentos mais famosos de Sócrates, enfatizando a importância do autoconhecimento como base para a sabedoria e para a vida virtuosa.
+                
+            socrates.</p>
+        </section>
+    </div>
+
+    <!-- Página 2 -->
+    <div class="container" id="pagina2" style="display: none;">
+        <header>
+            <h1>Emoji!</h1>
+        </header>
+
+        <!-- Emoji -->
+        <section>
+            <h2>Emoji</h2>
+            <p class="emoji">😃</p>
+        </section>
+
+        <!-- Botão -->
+        <section>
+            <button class="btn" onclick="mostrarPagina('pagina1')">Voltar para Página 1</button>
+        </section>
+    </div>
+
+    <script>
+        function mostrarPagina(pagina) {
+            // Esconde ambas as páginas
+            document.getElementById('pagina1').style.display = 'none';
+            document.getElementById('pagina2').style.display = 'none';
+            
+            // Exibe a página solicitada
+            document.getElementById(pagina).style.display = 'block';
+        }
+
+        // Exibe a primeira página inicialmente
+        mostrarPagina('pagina1');
+    </script>
+</body>
+</html>
